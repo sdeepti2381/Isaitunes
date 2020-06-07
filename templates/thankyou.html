@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Thank You</title>
+    <!--<link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.ico') }}">-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/feedback.css') }}">
+
+    <script src="https://use.fontawesome.com/3fa36ae73c.js"></script>
+
+  </head>
+  <body>
+    {% extends "layout.html" %}
+    {% block content %}
+
+    <div class="container">
+      <h1> Thank you for your feedback! Your response was recorded.💜</h1>
+   </div>
+
+    {% endblock %}
+  </body>
+</html>

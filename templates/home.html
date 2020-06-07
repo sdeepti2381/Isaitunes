@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Spotinder</title>
+    <!--<link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
+    -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <script src="https://use.fontawesome.com/3fa36ae73c.js"></script>
+  </head>
+  <body>
+    {% extends "layout.html" %}
+    {% block content %}
+    <div class="container master">
+      <div>
+        <a href="{{ url_for('updateDislike') }}">
+          <button class="button downvote" onclick= updateDislike()>
+              <i class="fa fa-times fa-3x"></i>
+          </button>
+        </a>
+      </div>
+
+      <div class="movie-card">
+        <img src={{song.image}} alt="song">
+        <div class="text">
+          <h4><b>{{song.title}}</b></h4>
+          <p class="marker"> <i class="fa fa-user-circle" aria-hidden="true"></i> {{song.artists}}</p>
+          <p class="marker"> <i class="fas fa-dot-circle"aria-hidden="true"></i> {{song.album}}</p>
+            <p class="marker"><i class="fas fa-globe" aria-hidden="true"></i> {{song.rank}}/50 in {{song.country}}</p>
+          <p class="marker"> <i class="fa fa-clock-o" aria-hidden="true"></i> {{song.duration}} </p>
+          <hr>
+    <p class="marker"><i class="fas fa-music"aria-hidden="true"></i> Listen To {{song.title}} <a href="https://www.youtube.com/results?search_query={{song.title}}" target="_blank"> HERE </a></p>
+        </div>
+      </div>
+
+      <div>
+        <a href="{{ url_for('updateLike') }}">
+          <button class="button heart" onclick= updateLike()>
+            <i class="fa fa-heart fa-2x"></i>
+          </button>
+        </a>
+      </div>
+    </div>
+    
+    <div id="audio">
+      <div class="row">
+        <div class="col-md-4 mx-auto col-xs-1 text-center">
+          <h3>Want a preview?</h3>
+          <audio controls src={{song.snip}} type="mp3">
+            Your browser does not support audio.
+          </audio>    
+        </div>
+      </div>
+    </div>
+    
+
+    {% endblock %}
+  </body>
+</html>

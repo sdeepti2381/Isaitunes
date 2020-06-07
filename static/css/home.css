@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200i,400&display=swap');
+
+html {
+   background-image: linear-gradient(to bottom, rgb(195, 235, 231), rgb(93, 148, 142)) !important;
+}
+body {
+    font-family: "Poppins", sans-serif;
+    background-image: linear-gradient(to bottom, rgb(195, 235, 231), rgb(93, 148, 142)) !important;
+}
+
+h3 {
+  background-color: rgb(195, 235, 231);
+  font-family: "Poppins",sans-serif !important;
+  font-style: italic;
+  padding:5px; 
+  border-radius: 20px; 
+  text-align: center;
+
+}
+
+.movie-card {
+    /* Add shadows to create the "card" effect */
+    background-color: whitesmoke;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.3);
+    transition: 0.4s;
+    width:40%;
+    min-width: 300px;
+    border-radius: 7px;
+}
+
+p {
+    color: rgb(94, 94, 94);
+    font-family: "Poppins", sans-serif;
+    margin-bottom: 6px !important;
+}
+
+.marker {
+    margin-bottom: 1px !important;
+}
+
+/* Add rounded corners to the top left and the top right corner of the image */
+img {
+  border-radius: 5px 5px 0 0;
+  margin-top: 10px;
+  max-height: 400px; 
+}
+
+hr {
+    margin:10px 0 !important;
+}
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.text {
+    text-align: justify !important;
+    padding: 0 0 0 0 !important;
+    width: 100% !important;
+}
+
+span {
+    font-weight: 500;
+}
+
+.container {
+  background-color: rgb(195, 235, 231);
+  padding: 10px 20px;
+  text-align: center;
+  padding-bottom: 30px;
+  
+}
+.container > div {
+  display: inline-block;
+  padding: 0 10px;
+  vertical-align: middle;
+}
+.container:after {
+  display: inline-block;
+  content: " ";
+  width: 100%;
+}
+
+.button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    color: whitesmoke;
+    border: none;
+}
+.button:hover{
+  transform: scale(1.1);
+}
+.downvote {
+    background-image: linear-gradient(rgb(199, 2, 44), rgb(245, 115, 28))
+}
+
+.heart {
+    background-image: linear-gradient(rgb(133, 33, 248), rgb(255, 0, 157))
+}

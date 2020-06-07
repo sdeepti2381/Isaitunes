@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Feedback Form</title>
+    <!--<link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.ico') }}">-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/feedback.css') }}">
+
+    <script src="https://use.fontawesome.com/3fa36ae73c.js"></script>
+
+  </head>
+  <body>
+    {% extends "layout.html" %}
+    {% block content %}
+
+    <div class="container">
+      <h1> Feedback Form </h1>
+
+    {% for message in get_flashed_messages() %}
+    <div class="flash">
+        {{ message }}
+    </div>
+    {% endfor %}
+
+
+      <p> We hope you liked this app! 💜</p>
+      <p> Is there a song that you feel others should discover? Is there something that we can improve on?</p>
+      <p> Feel free to reach out to us by filling out this feedback form.</p>
+
+      <form id="feed" action="{{ url_for('feedback') }}" method='POST'>
+
+        {{ form.name.label }}
+        {{ form.name }}
+
+        {{ form.email.label }}
+        {{ form.email }}
+
+        {{ form.message.label }}
+        {{ form.message }}
+ 
+        {{ form.submit }}
+
+    </form>
+    </div>
+
+    
+
+    {% endblock %}
+  </body>
+</html>

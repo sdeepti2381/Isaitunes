@@ -1,0 +1,19 @@
+p {
+    font-size: 18px;
+    line-height: 40px;
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.flash {
+    background-color: #FBB0B0;
+    padding: 10px;
+    width: 400px;
+}
