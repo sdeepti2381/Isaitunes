@@ -9,6 +9,7 @@ from firebase_admin import firestore
 from forms import FeedbackForm
 
 
+
 x = [] 
 counter = 0
 cred = credentials.Certificate("./isaitunes-b24a3-firebase-adminsdk-gdo3f-c73d7bc378.json")
@@ -106,18 +107,25 @@ def feedback():
     form = FeedbackForm()
 
     if (request.method == 'POST'):
-        if (form.validate() == False):
-            print("NOOOOOOOOOO")
-            flash('All fields are required.')
-            return render_template('feedback.html', form=form)
-        else:
-            #this is the place where we store the items inside a database.
-            return("Form posted.")
+        feed = request.form
+        print(feed)
+        nme = feed.get('name')
+        emil = request.form.get('email')
+        msg = request.form.get('message')
+        #this is the place where we store the items inside a database.
+        doc_ref = db.collection(u'feedback').document(emil)
+        doc_ref.set({
+        u'Name': nme,
+        u'Message': msg,
+        })
+
+        return thankyou()
 
     elif (request.method == 'GET'):
+        print("This was a GET request.")
         return render_template('feedback.html', form=form)
 
-    #return render_template('feedback.html', form=form)
+    return render_template('feedback.html', form=form)
 
 @app.route("/updateLike")
 def updateLike(): 
