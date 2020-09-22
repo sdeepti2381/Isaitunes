@@ -34,11 +34,11 @@ def home():
     val = None
     dval = None
     if (doc_ref.get(field_paths={'Likes'}).to_dict() is not None):
-        print("HALLELUJAHHH")
+        print("It works!")
         val = doc_ref.get(field_paths={'Likes'}).to_dict().get('Likes')
         dval = doc_ref.get(field_paths={'Dislikes'}).to_dict().get('Dislikes')
     else: 
-        print("You suck")
+        print("Not found")
         val=0
         dval = 0
 
